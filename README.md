@@ -1,5 +1,9 @@
 
 ```
-docker run -it -v `pwd`:/terraform/config -v ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub linode/terraform apply
+docker run  -v `pwd`/:/terraform -it linode/terraform -var root_pass="$(openssl rand -base64 32)" -var authorized_key="$(cat ~/.ssh/id_rsa.pub)" -var linode_token="$LINODE_TOKEN"
+```
+
+```
+docker run -it --entrypoint /bin/bash linode/terraform
 ```
 

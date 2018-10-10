@@ -1,7 +1,8 @@
 resource "linode_instance" "linode123" {
-  label = "linode_foo"
+  count = "1"
+  label = "linode_foo_${count.index+1}"
   type = "g6-nanode-1"
-  root_pass = "BADIDEaM4t3"
-  image = "linode/debian"
-  authorized_keys = ["${chomp(file("~/.ssh/id_rsa.pub"))}"]
+  root_pass = "${var.root_pass}"
+  image = "linode/debian9"
+  authorized_keys = ["${var.authorized_key}"]
 }
