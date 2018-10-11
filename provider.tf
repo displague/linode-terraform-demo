@@ -7,4 +7,5 @@ module "app1" {
 
   authorized_key = "${var.authorized_key}"
   root_pass = "${var.root_pass}"
+  region = "${var.region}"
 }

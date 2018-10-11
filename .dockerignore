@@ -1,0 +1,4 @@
+**/.git
+*tfstate
+*backup
+.terraform

@@ -4,5 +4,6 @@ resource "linode_instance" "linode123" {
   type = "g6-nanode-1"
   root_pass = "${var.root_pass}"
   image = "linode/debian9"
+  region = "${var.region}"
   authorized_keys = ["${var.authorized_key}"]
 }
